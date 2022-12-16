@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/store")
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 public class BookStoreController {
 
     @Autowired
@@ -28,5 +29,10 @@ public class BookStoreController {
     @GetMapping("/{id}/books")
     public List<Book> getBooksOfStore(@PathVariable int id){
         return bookStoreService.getBooksOfStore(id);
+    }
+
+    @GetMapping()
+    public List<BookStore> getAllStores(){
+        return bookStoreService.findAllStores();
     }
 }

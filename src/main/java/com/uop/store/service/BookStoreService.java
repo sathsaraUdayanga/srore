@@ -41,4 +41,8 @@ public class BookStoreService {
     public List<Book> getBooksOfStore(int id) {
         return bookStoreRepository.getBooks(id);
     }
+
+    public List<BookStore> findAllStores() {
+        return bookStoreRepository.findAll();
+    }
 }
