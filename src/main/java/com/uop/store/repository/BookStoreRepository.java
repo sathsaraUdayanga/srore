@@ -14,4 +14,6 @@ public interface BookStoreRepository extends JpaRepository<BookStore, Integer> {
 
     @Query("SELECT bs.books FROM BookStore bs WHERE bs.id=?1")
     List<Book> getBooks(int id);
+
+    BookStore findById(int id);
 }

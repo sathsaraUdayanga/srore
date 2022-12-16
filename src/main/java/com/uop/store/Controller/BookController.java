@@ -37,7 +37,7 @@ public class BookController {
         return bookService.deleteBook(bookId);
     }
 
-    @PostMapping("/update/{id}")
+    @PutMapping("/{id}")
     public CommonResponse updateBook(@PathVariable int id, @RequestBody BookDto bookDto) {
         return bookService.updateBook(id,bookDto);
     }

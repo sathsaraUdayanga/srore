@@ -1,6 +1,7 @@
 package com.uop.store.Controller;
 
 import com.uop.store.dto.BookStoreDto;
+import com.uop.store.dto.CommonResponse;
 import com.uop.store.entity.Book;
 import com.uop.store.entity.BookStore;
 import com.uop.store.service.BookStoreService;
@@ -34,5 +35,10 @@ public class BookStoreController {
     @GetMapping()
     public List<BookStore> getAllStores(){
         return bookStoreService.findAllStores();
+    }
+
+    @PostMapping("/add-books/{storeId}")
+    public CommonResponse addBooksToStore(@PathVariable int storeId, @RequestBody List<Integer> bookIds){
+        return bookStoreService.addBooksToStore(storeId, bookIds);
     }
 }
